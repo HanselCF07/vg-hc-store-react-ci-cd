@@ -1,0 +1,60 @@
+.customNavbar {
+  background-color: #1B1D25 !important;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: white !important;
+    opacity: 1 !important;
+    transition: color 0.3s ease;
+}
+
+.nav-link:hover {
+    color: gray !important;
+}
+
+.nav-link.active {
+    color: white !important;
+    font-weight: bold;
+    opacity: 1 !important;
+}
+
+.signInBtn {
+    background: #6c5ce7 !important;
+    border: none !important;
+    height: 45px !important;
+    font-size: 16px !important;
+}
+
+.signInBtn:hover {
+    background: #4a3cb4 !important;
+    transform: translateY(-1px) !important;
+}
+
+.userBtn {
+    background: #6c5ce7 !important;
+    border: none !important;
+    height: 45px !important;
+    font-size: 16px !important;
+}
+
+.userBtn:hover {
+    background: #4a3cb4 !important;
+    transform: translateY(-1px) !important;
+}
+
+.signDropdownItem {
+    background: none !important;
+    /*border: none !important;
+    height: 45px !important;
+    font-size: 16px !important;*/
+}
+
+.signDropdownItem:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+.signDropdownItem:active {
+    background: #4a3cb4 !important;
+    transform: translateY(-1px) !important;
+}

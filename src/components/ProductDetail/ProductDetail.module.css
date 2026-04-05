@@ -1,0 +1,155 @@
+
+.productDetailCard {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: #2B2A30;
+  border-radius: 8px;
+  margin: 5% auto;
+  padding: 2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+
+.productDetailCardImage {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-self: center;
+  width: 80%;
+  margin-bottom: 1.5rem;
+}
+
+.productDetailImage {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+.productDetailContent {
+  display: block;
+  flex: 1;
+  align-self: center;
+  width: 80%;
+  margin-bottom: 1.5rem;
+  padding: 0 1rem;
+}
+
+.productDetailTitle {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.productDetailDescription {
+  color: #aaa;
+  margin-bottom: 1.0rem;
+  line-height: 1.5;
+}
+
+
+.productDetailSection {
+  margin-bottom: 1.0rem;
+}
+
+.productDetailSectionTitle {
+  color: white;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.productDetailDeveloperBody {
+    display: flex;
+}
+
+.productDetailDeveloperName {
+  color: #ffffff;
+  margin: 0% 1% 0% 0%;
+}
+
+.productDetailDeveloperCountry {
+  color: #aaa;
+}
+
+
+.productDetailPlatformGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.productDetailPlatformRadio {
+  display: none;
+}
+
+.productDetailPlatformLabel {
+  border: 1px solid #888;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.productDetailPlatformRadio:checked + .productDetailPlatformLabel {
+  background-color: #555;
+  border-color: #aaa;
+}
+
+
+.productDetailPrice {
+  color: white;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-right: 1rem;
+}
+
+.productDetailOldPrice {
+  color: #aaa;
+}
+
+.productDetailButtons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2% 0% 0% 0%;
+  gap: 1rem;
+}
+
+.productDetailBtnAddShoppingCart {
+  cursor: pointer;
+  background-color: #6c5ce7 !important;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.disabledBtn {
+  opacity: 0.6;
+  pointer-events: none;
+  cursor: not-allowed;
+}
+
+
+.productDetailBtnAddShoppingCart:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #4f46e5, #4338ca);
+}
+
+.productDetailBtnAddWishlist {
+  cursor: pointer;
+  background-color: transparent;
+  color: white;
+  font-weight: bold;
+  border: 1px solid #888;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.productDetailBtnAddWishlist:hover {
+  background-color: #333;
+  border-color: #aaa;
+}
+

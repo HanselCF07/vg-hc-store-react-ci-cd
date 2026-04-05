@@ -1,0 +1,29 @@
+# k8s-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vg-hc-store-react-integration-qas
+  namespace: integration-qas
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vg-hc-store-react-integration-qas
+  template:
+    metadata:
+      labels:
+        app: vg-hc-store-react-integration-qas
+    spec:
+      containers:
+        - name: vg-hc-store-react-integration-qas
+          image: registry-gitlab-front-end-vg-hc-store-react:integration-qas
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: nginx.conf
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: vg-hc-store-react-nginx-conf-integration-qas

@@ -1,0 +1,30 @@
+.newsPage {
+  padding: 2rem;
+}
+
+.newsPage section {
+  margin-bottom: 1.5rem;
+}
+
+.newsPage h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.newsPage h3 {
+  color: white;
+}
+
+.newsPage p {
+  color: white;
+}
+
+.newsPage ul {
+  list-style: none;
+  padding: 0;
+}
+
+.newsPage li {
+  color: white;
+  margin: 0.5rem 0;
+}

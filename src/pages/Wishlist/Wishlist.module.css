@@ -1,0 +1,30 @@
+.wishlistPage {
+  padding: 2rem;
+}
+
+.wishlistPage section {
+  margin-bottom: 1.5rem;
+}
+
+.wishlistPage h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.wishlistPage h3 {
+  color: white;
+}
+
+.wishlistPage p {
+  color: white;
+}
+
+.wishlistPage ul {
+  list-style: none;
+  padding: 0;
+}
+
+.wishlistPage li {
+  color: white;
+  margin: 0.5rem 0;
+}

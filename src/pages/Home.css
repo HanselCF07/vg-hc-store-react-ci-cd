@@ -1,0 +1,9 @@
+.home h2 {
+  margin: 1rem 0;
+  color: white;
+}
+
+.slick-list {
+    border-radius: 12px;
+    overflow: hidden;
+}

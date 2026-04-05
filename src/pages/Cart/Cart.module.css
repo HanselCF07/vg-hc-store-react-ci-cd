@@ -1,0 +1,115 @@
+/* Cart.css */
+
+.cartWrapper {
+    margin: 5% 0%;
+}
+
+.productCard {
+    background: #2B2A30 !important;
+    border-radius: 12px !important;
+    transition: transform 0.2s !important;
+    min-height: 200px !important;
+    display: flex;
+    align-items: center;
+}
+
+.productCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.productImage {
+    width: 100px;
+    height: 125px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.badgeRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+
+.addInformationBadge {
+    max-width: 25%;
+    background: rgba(255,255,255,0.1);
+    color: #9ca3af;
+    text-align: center;
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    border-radius: 6px;
+}
+
+.discountBadge {
+    background: #dcfce7;
+    color: #166534;
+    font-size: 0.75rem;
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-weight: 600;
+}
+
+.wishlistImg {
+    background-color:none !important;
+    color: #ffffff !important;
+}
+
+.wishlistBtn {
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    width: 90%;
+    font-size: 20px;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 8px !important;
+    text-align: center; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,1) !important;
+}
+
+.wishlistBtn:hover {
+    /*color: gray !important;*/
+    transform: translateY(-2px);
+}
+
+.removeImg {
+    background-color:none !important;
+    color: red !important;
+}
+
+.removeBtn {
+    cursor: pointer !important;
+    transition: all 0.2s !important;
+    width: 90%;
+    font-size: 20px;
+    background-color: rgba(128, 128, 128, 0.6);
+    border-radius: 8px !important;
+    text-align: center; 
+    text-shadow: 1px 1px 2px rgba(0,0,0,1) !important;
+}
+
+.removeBtn:hover {
+    /*color: gray !important;*/
+    transform: translateY(-2px);
+}
+
+
+.summaryCard {
+    background: #2B2A30 !important;
+    border-radius: 12px !important;
+    position: sticky !important;
+    top: 20px !important;
+}
+
+.checkoutBtn {
+    background: #6c5ce7 !important;
+    border: none !important;
+    transition: transform 0.2s !important;
+}
+
+.checkoutBtn:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #4f46e5, #4338ca);
+}
+
+

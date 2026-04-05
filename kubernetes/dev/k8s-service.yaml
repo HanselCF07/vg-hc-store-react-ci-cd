@@ -1,0 +1,16 @@
+# k8s-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: vg-hc-store-react-service-development
+  namespace: development
+spec:
+  selector:
+    app: vg-hc-store-react-development
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: ClusterIP
+
+

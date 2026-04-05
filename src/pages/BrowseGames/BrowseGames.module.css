@@ -1,0 +1,153 @@
+.browseGamesContainer {
+  color: #fff;
+  max-width: 1440px;
+  margin: 0% auto;
+  padding: 2rem;
+}
+
+.browseGamesTitle {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  margin: 0 auto;
+}
+
+.browseGamesFilterBar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 1rem;
+  color: white;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.browseGamesFilterSelect {
+  display: flex;
+  flex: 1;
+  background: #1e1e1e;
+  color: #fff;
+  max-width: 300px;
+  min-width: 150px;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #333;
+}
+
+.browseGamesClearFilters {
+    width: 40px;
+
+    color: white;
+    background-color: rgba(128, 128, 128, 0.6);
+
+    font-size: 25px;
+    text-align: center;
+    text-shadow: 1px 1px 2px rgba(0,0,0,1);
+
+    border-radius: 8px;
+}
+
+.browseGamesClearFilters:hover {
+    /*color: gray !important;*/
+    transform: translateY(-2px);
+}
+
+.browseGamesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.5rem;
+  max-width: calc(220px * 5 + 1.5rem * 4); /* maximum width for 5 columns */
+  margin: 5% auto; /* centra el grid */
+}
+
+.browseGamesGridCard {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: #1c1c1c;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  transition: transform 0.2s ease;
+}
+
+.browseGamesGridCard:hover {
+  transform: scale(1.03);
+}
+
+.cardGameCover {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+
+.cardGameInfo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.cardGameTitle {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.cardGamePrice {
+  font-weight: bold;
+  color: #7a5cff;
+  margin-bottom: 1rem;
+}
+
+.cardGameDetailBtn {
+  margin-top: auto;
+  padding: 0.5rem;
+  background: #7a5cff;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cardGameDetailBtn:hover {
+  background: #9a7cff;
+}
+
+
+.gridPaginationCustom {
+  background-color: #1e1e1e !important;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+.pageItemCustom {
+  margin: 0 0.25rem;
+}
+
+.pageLinkCustom {
+  background-color: #1e1e1e !important;
+  color: #fff !important;
+  border: 1px solid #333 !important;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.pageLinkCustom:hover {
+  background-color: #7a5cff !important;
+  color: #fff !important;
+  border-color: #7a5cff !important;
+}
+
+.pageItemActive .pageLinkCustom {
+  background-color: #7a5cff !important;
+  border-color: #7a5cff !important;
+  color: #fff !important;
+}
+
+.pageItemDisabled .pageLinkCustom {
+  background-color: #1e1e1e !important;
+  color: #777 !important;
+  border-color: #333 !important;
+  cursor: not-allowed !important;
+}
+

@@ -1,0 +1,30 @@
+.supportPage {
+  padding: 2rem;
+}
+
+.supportPage section {
+  margin-bottom: 1.5rem;
+}
+
+.supportPage h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.supportPage h3 {
+  color: white;
+}
+
+.supportPage p {
+  color: white;
+}
+
+.supportPage ul {
+  list-style: none;
+  padding: 0;
+}
+
+.supportPage li {
+  color: white;
+  margin: 0.5rem 0;
+}

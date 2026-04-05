@@ -1,0 +1,30 @@
+.accountPage {
+  padding: 2rem;
+}
+
+.accountPage section {
+  margin-bottom: 1.5rem;
+}
+
+.accountPage h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.accountPage h3 {
+  color: white;
+}
+
+.accountPage p {
+  color: white;
+}
+
+.accountPage ul {
+  list-style: none;
+  padding: 0;
+}
+
+.accountPage li {
+  color: white;
+  margin: 0.5rem 0;
+}

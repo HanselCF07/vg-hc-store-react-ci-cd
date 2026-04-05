@@ -1,0 +1,61 @@
+*,
+body,
+html,
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+strong,
+li {
+  font-family: 'Open Sans', sans-serif;
+}
+
+/*
+================================ 
+      Theme Color Code
+================================
+*/
+
+:root {
+    --white: #fff !important;
+    --primary: #009946 !important;
+    --secondary: #26272C !important;
+    --bg-color: #131218;
+    --bg_color2: #35363C;
+    --card_bg: #1D1E25;
+    --transparent: rgba(0, 0, 0, 0);
+    --text-light: #686869;
+    --text-light2: #848792;
+    --text-dark: #4F5059;
+    --red_color: #FF4141;
+    --green_color: #38F075;
+    --yelow_color: #FFA228;
+    --orange_color: #E93612;
+}
+
+html, body {
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+body {
+  background-color: var(--bg-color) !important;
+}
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 !important;
+}
+
+/* .app-container{
+  background-color: var(--bg-color) !important;
+} */

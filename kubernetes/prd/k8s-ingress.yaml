@@ -1,0 +1,23 @@
+# k8s-ingress.yaml
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: vg-hc-store-react-ingress
+  namespace: main
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "100m"
+spec:
+  rules:
+  - host: vg-hc.local
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: vg-hc-store-react-service
+            port:
+              number: 80
+
+
+

@@ -1,0 +1,29 @@
+# k8s-deployment.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vg-hc-store-react-development
+  namespace: development
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vg-hc-store-react-development
+  template:
+    metadata:
+      labels:
+        app: vg-hc-store-react-development
+    spec:
+      containers:
+        - name: vg-hc-store-react-development
+          image: registry-gitlab-front-end-vg-hc-store-react:development
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: nginx-conf
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: nginx.conf
+      volumes:
+        - name: nginx-conf
+          configMap:
+            name: vg-hc-store-react-nginx-conf-development

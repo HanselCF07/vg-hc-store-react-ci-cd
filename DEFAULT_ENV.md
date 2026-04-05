@@ -1,0 +1,2 @@
+VITE_ENVIRONMENT=DEVELOPMENT
+VITE_API_BASE_URL=http://dev.vg-hc.local

@@ -1,0 +1,81 @@
+default:
+  tags:
+    - runner-auth-ubuntu24
+
+stages:
+  - build
+  - deploy
+
+variables:  
+  DEV_BRANCH: "development"
+  QAS_BRANCH: "integration-qas"
+  PRD_BRANCH: "main"
+  ENV_PATH: "/home/gitlab-runner/enviroment/front-end/vg-hc-store-react/${CI_COMMIT_REF_NAME}/.env"
+
+build:
+  stage: build
+  script:
+    # Copy the .env file from the runner path to the project
+    - cp $ENV_PATH ./.env
+    # Build the image with the .env file already in the project root
+    - docker build --no-cache -t $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME .
+  rules:
+    - if: '$CI_COMMIT_BRANCH == $DEV_BRANCH'
+    - if: '$CI_COMMIT_BRANCH == $QAS_BRANCH'
+    - if: '$CI_COMMIT_BRANCH == $PRD_BRANCH'
+
+
+deploy_dev:
+  stage: deploy
+  script:
+    # Restart the deployment to apply the changes
+    - kubectl delete deployments/vg-hc-store-react-development -n development --ignore-not-found
+
+    # Load the local image in minikube
+    - minikube image load $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+    # Apply Kubernetes manifests
+    - kubectl apply -f kubernetes/dev/k8s-configmap-nginx.yaml
+    - kubectl apply -f kubernetes/dev/k8s-deployment.yaml
+    - kubectl apply -f kubernetes/dev/k8s-service.yaml
+    - kubectl apply -f kubernetes/dev/k8s-ingress.yaml
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "development"'
+
+deploy_qas:
+  stage: deploy
+  script:
+    # Delete the deployment to apply the changes
+    - kubectl delete deployments/vg-hc-store-react-integration-qas -n integration-qas --ignore-not-found
+
+    # Load the local image in minikube
+    - minikube image load $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+    # Apply Kubernetes manifests
+    - kubectl apply -f kubernetes/qas/k8s-configmap-nginx.yaml
+    - kubectl apply -f kubernetes/qas/k8s-deployment.yaml
+    - kubectl apply -f kubernetes/qas/k8s-service.yaml
+    - kubectl apply -f kubernetes/qas/k8s-ingress.yaml
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "integration-qas"'
+      when: manual
+      allow_failure: false
+
+deploy_prd:
+  stage: deploy
+  script:
+    # Delete the deployment to apply the changes
+    - kubectl delete deployments/vg-hc-store-react -n main --ignore-not-found
+
+    # Load the local image in minikube
+    - minikube image load $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+
+    # Apply Kubernetes manifests
+    - kubectl apply -f kubernetes/prd/k8s-configmap-nginx.yaml
+    - kubectl apply -f kubernetes/prd/k8s-deployment.yaml
+    - kubectl apply -f kubernetes/prd/k8s-service.yaml
+    - kubectl apply -f kubernetes/prd/k8s-ingress.yaml
+  rules:
+    - if: '$CI_COMMIT_BRANCH == "main"'
+      when: manual
+      allow_failure: false
